@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "utopiafy"
+version = "1.0.0"
+description = "Bot escrito em Python para o Pudding's Utopia"
+authors = ["SwiftNathalie <swiftnathyz@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+"discord.py" = "^2.3.1"
+python-dotenv = "^1.0.0"
+httpx = "^0.24.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+black = "^23.3.0"
+autopep8 = "^2.0.2"
+autoflake = "^2.2.0"
+isort = "^5.12.0"
+pytest-asyncio = "^0.21.0"
+bandit = "^1.7.5"
+pre-commit = "^3.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
