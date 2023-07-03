@@ -1,0 +1,46 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        args:   [
+                --line-length=110,
+                --extend-exclude=^migrations/,
+                 .
+              ]
+        pass_filenames: false
+
+  - repo: https://github.com/PyCQA/pylint
+    rev: v3.0.0a6
+    hooks:
+      - id: pylint
+        args: [
+              --rcfile=.pylintrc, 
+              --recursive=y, 
+              --load-plugins=pylint.extensions.docparams, 
+              ./bot
+            ]
+        pass_filenames: false
+
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.2.0
+    hooks:
+      - id: autoflake
+        args: [
+                --in-place, 
+                --remove-unused-variables, 
+                --remove-all-unused-imports,
+                --recursive, 
+                ./bot
+            ]
+        pass_filenames: false
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: [
+                .
+        ]
+        pass_filenames: false
+
